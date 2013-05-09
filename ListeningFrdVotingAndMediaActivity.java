@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* DEVELOPER NAME: ALPESH UPADHYAY CONTACT: +91-9555859884
 */
 
@@ -11,6 +12,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+=======
+package com.mobileharvest.activity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+>>>>>>> origin/init
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +29,10 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+<<<<<<< HEAD
 import android.content.ActivityNotFoundException;
+=======
+>>>>>>> origin/init
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
@@ -39,17 +50,25 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+<<<<<<< HEAD
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+=======
+>>>>>>> origin/init
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import com.mobileharvest.ImageLoadingFramework.ImageLoader;
 import com.mobileharvest.activity.BookmarksActivity.ItemAdapter;
+=======
+
+import com.mobileharvest.ImageLoadingFramework.ImageLoader;
+>>>>>>> origin/init
 import com.mobileharvest.adapters.DBAdapter;
 import com.mobileharvest.constants.MHConstants;
 import com.mobileharvest.model.AdminPreferences;
@@ -61,6 +80,7 @@ import com.stackmob.sdk.api.StackMobOptions;
 import com.stackmob.sdk.api.StackMobQuery;
 import com.stackmob.sdk.callback.StackMobCallback;
 import com.stackmob.sdk.exception.StackMobException;
+<<<<<<< HEAD
 public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements OnItemClickListener {
 	// Button btnLoadMore;
 	int  media_id_size=0;
@@ -73,6 +93,10 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 	int click_value=1;
 	int end_value=0;
 	int pagination_Size=10;
+=======
+
+public class ListeningFrdVotingAndMediaActivity extends BaseProfile implements OnItemClickListener {
+>>>>>>> origin/init
 	ImageView like;
 	boolean voted;
 	ImageView vote,addcnt,home,friends,settings,bookmarks,profilephoto;
@@ -80,6 +104,11 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 	private StackMob stackmob;
 	int user_given_votes;
 	int vote_count = 0;
+<<<<<<< HEAD
+=======
+	 
+	
+>>>>>>> origin/init
 	String newNumber;
 	String friendsNumber;
 	boolean isvoted;
@@ -95,8 +124,11 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 	ListView listView;
 	List<String> fields;
 	List<String> friends_list  ;
+<<<<<<< HEAD
 	List<String> media_ids  ;
 	List<String>media_idss;
+=======
+>>>>>>> origin/init
 	List<String> topics_list ;
 	List<String> topicsIds  ;
 	List<String> keysList  ;
@@ -104,7 +136,10 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
     String flag, usern,newflag;
 	String pic_url;
 	String displayNumber;
+<<<<<<< HEAD
 	String  number = null; 
+=======
+>>>>>>> origin/init
 	 MediaInfo mediaInfoObj  ;
 	 List<MediaInfo> mediaObjList ;
 	 HashMap<String, MediaInfo> mediaInfoObjMap  ;
@@ -127,29 +162,38 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 	 int givenVotes;
 	 List <String> friendslis;
 	 String profpic = null,from;
+<<<<<<< HEAD
 	 //ItemAdapter adapter;
 	 
 	
+=======
+>>>>>>> origin/init
 	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState); 
 		setContentView(R.layout.voting);
+<<<<<<< HEAD
 		
 		final ImageButton b1=(ImageButton)findViewById(R.id.button1);
 		final ImageButton b2=(ImageButton)findViewById(R.id.button2);
 		b1.setVisibility(View.INVISIBLE);
 		b2.setVisibility(View.INVISIBLE);
+=======
+>>>>>>> origin/init
 		imageLoader=new ImageLoader(getApplicationContext());
 		StackMobAndroid.init(this.getApplicationContext(),MHConstants.DEV_PROD_VERSION,MHConstants.PUBLIC_KEY);
 		stackmob = StackMob.getStackMob();
 		flag = getIntent().getStringExtra("flag");
 		from = getIntent().getStringExtra("from");
 		newflag = getIntent().getStringExtra("newflag");
+<<<<<<< HEAD
 
 		   final ImageButton back_button=(ImageButton)findViewById(R.id.back_button);
 		final ImageButton next_button=(ImageButton)findViewById(R.id.next_button);
+=======
+>>>>>>> origin/init
 		like = (ImageView) findViewById(R.id.likeimg);
 		addcnt=(ImageView) findViewById(R.id.add);
 		ImageView profile = (ImageView) findViewById(R.id.imageView4);
@@ -161,7 +205,10 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		 //initiliazing all list
 		  taggedUserList = new ArrayList<String>();
 		  friendsprofilepiclist = new LinkedHashMap<String,String>(0);
+<<<<<<< HEAD
 		  media_ids=new ArrayList<String>();
+=======
+>>>>>>> origin/init
 		  friends_list = new ArrayList<String>();
 		  topics_list = new ArrayList<String>();
 		  topicsIds = new ArrayList<String>();
@@ -173,15 +220,19 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		  userVoteReceivedList = new ArrayList<String>(0);
 		  mediaInfoObjMap = new HashMap<String, MediaInfo>();
 		  friendslis = new ArrayList<String>(0);
+<<<<<<< HEAD
 		  final List<String> mylist = new ArrayList<String>();
 		  final List<String> audioList = new ArrayList<String>();
 
+=======
+>>>>>>> origin/init
 		if(null!=newflag && newflag.equals("user")){
 		  like.setVisibility(View.VISIBLE); 
 		}else{
 			like.setVisibility(View.GONE);
 		}
 		Intent intent = getIntent();
+<<<<<<< HEAD
 		int new_value = intent.getIntExtra("new_value", 0); 
 	System.out.println("alpesh"+new_value);
 		
@@ -206,6 +257,8 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		}
 		//if using the below line the media under self profile is getting crashed.
 		System.out.println("hi media_id recieved on listeningfrndvoting page is :"+media_ids);
+=======
+>>>>>>> origin/init
 		phoneNumber = intent.getStringExtra("phoneNumber");
 		pic_url = intent.getStringExtra("pic_url");
 		displayNumber = intent.getStringExtra("displayNumber"); 
@@ -215,6 +268,7 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		friendsprofilepiclist = (Map<String,String>)getIntent().getSerializableExtra("imageurls");
 		mediaObjList.clear();
 		mediaObjList = (ArrayList<MediaInfo>) getIntent().getSerializableExtra("mediaidshashmap");
+<<<<<<< HEAD
 	//	System.out.println("testing the mediaOnjList coming from home is"+mediaObjList);
 		
 		//System.out.println("testing 7"+mediaObjList);
@@ -556,6 +610,11 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		}		
 		
 		
+=======
+		friendsNumber = intent.getStringExtra("friendsNumber"); 
+		isvoted = intent.getBooleanExtra("isvot&&&&&&&&&&&&&&&&&&&&&&ed", isvoted);
+		System.out.println("" + isvoted); 
+>>>>>>> origin/init
 		 
 		mediaInfoObj = new MediaInfo();
 		DBAdapter db = new DBAdapter(getApplicationContext()); 
@@ -596,6 +655,7 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 	        int recvotes = frdmodelfrienduser.getNoOfReceivedVotes();
 			liketxt.setText(Integer.toString(recvotes));
 		}
+<<<<<<< HEAD
 	
 	  back_button.setVisibility(View.INVISIBLE);
 // pagination logic for back button for Listening WorkFlow
@@ -938,11 +998,17 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		
 		AdminPreferences adminpref = MHConstants.adminPreferences.get("ADMIN_PREF");
 	     onestar = adminpref.getStar1();
+=======
+				
+		AdminPreferences adminpref = MHConstants.adminPreferences.get("ADMIN_PREF");
+         onestar = adminpref.getStar1();  
+>>>>>>> origin/init
 	     twostar = adminpref.getStar2();
 	     threestar = adminpref.getStar3();
 	     fourstar = adminpref.getStar4();
 	     fivestar = adminpref.getStar5();
 		 listView = (ListView) findViewById(android.R.id.list);
+<<<<<<< HEAD
 //			for loading dynamic button 
 //			ImageView btnLoadMore = new ImageView(this);
 //			btnLoadMore.setImageResource(R.drawable.back);
@@ -952,6 +1018,37 @@ public  class ListeningFrdVotingAndMediaActivity extends BaseProfile implements 
 		 listView.invalidate();  	
 			SetToAdapter();
 			listView.setOnItemClickListener(this);
+=======
+		 listView.invalidate();  	
+		 
+		    if(null!= mediaObjList && mediaObjList.size()>0 && !flag.equals("profile")){ 
+			for (int i = 0; i < mediaObjList.size(); i++)
+			{
+			      MediaInfo mediaObj = mediaObjList.get(i);
+				  rowItems.add(mediaObj); 
+				  
+			} 
+		}
+		if(flag.equals("profile"))
+		{
+			for (int j = 0; j < MHConstants.mediaProfileObjList.size(); j++)
+			{
+			      MediaInfo mediaObj = MHConstants.mediaProfileObjList.get(j);
+				  rowItems.add(mediaObj); 
+			} 
+		}if(flag.equals("back")) {
+
+			 MediaInfo mediaObj = MHConstants.selectedmediaobj.get("mediaInfoObj");
+			 rowItems.add(mediaObj);
+		}
+		
+		if(null!=rowItems && rowItems.size()>0 && rowItems.get(0)!=null){
+		ItemAdapter adapter = new ItemAdapter(getApplicationContext(),R.layout.media_audio,rowItems); 
+		listView.setAdapter(adapter);
+		}
+listView.setOnItemClickListener(this);
+
+>>>>>>> origin/init
 
 addcnt.setOnClickListener(new View.OnClickListener() {
 	
@@ -980,7 +1077,10 @@ addcnt.setOnClickListener(new View.OnClickListener() {
 				checkvotes();
 				  }
 			    });
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/init
 	       
 home.setOnClickListener(new View.OnClickListener() {
 			
@@ -998,9 +1098,12 @@ profilephoto.setOnClickListener(new OnClickListener() {
 	public void onClick(View v) { 
 			v.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
 			 mediaRetrivalForProfile(phoneNumber, profpic,"friends");
+<<<<<<< HEAD
 //			Intent start_SelfProfileActivity= new Intent(ListeningFrdVotingAndMediaActivity.this,SelfProfileActivity.class);
 //			startActivity(start_SelfProfileActivity);
 //		 
+=======
+>>>>>>> origin/init
 	}
 });
 
@@ -1084,6 +1187,7 @@ like.setOnClickListener(new OnClickListener() {
 			}
 		});
 
+<<<<<<< HEAD
 ImageView logout=(ImageView)findViewById(R.id.logout_button);
 
 logout.setOnClickListener(new View.OnClickListener() {
@@ -1148,6 +1252,10 @@ listView.setAdapter(adapter);
 
 
 
+=======
+	}
+
+>>>>>>> origin/init
 private void checkvotes() {  
 	
 	FriendsModel frdmodelfrienduser = MHConstants.friendsModelDetails.get(friendsNumber);
@@ -1182,6 +1290,10 @@ private void fetchuserobjects() {
 		List<String> fields = new ArrayList<String>();
 		fields.add("username");
 		fields.add("profile_picture");
+<<<<<<< HEAD
+=======
+		fields.add("profilepic");
+>>>>>>> origin/init
 		fields.add("no_of_given_votes");
 		fields.add("no_of_received_votes");
 		fields.add("user_given_voting");
@@ -1204,6 +1316,12 @@ private void fetchuserobjects() {
 	         	    userGivenVotingList.clear();
 					JSONObject obj = array.getJSONObject(i);
 					imageUrl = obj.optString("profile_picture");
+<<<<<<< HEAD
+=======
+					if(imageUrl.equals(null)){
+						obj.optString("profilepic");
+					}
+>>>>>>> origin/init
 					friendPhno  = obj.optString("username");
 					noOfGivenVotes =obj.optInt("no_of_given_votes");
 					noOfReceivedVotes =obj.optInt("no_of_received_votes");  
@@ -1345,8 +1463,13 @@ private void fetchuserobjects() {
 	}
 
 	private void removeFromReceivedList() {
+<<<<<<< HEAD
 		stackmob.getDatastore().deleteIdFrom("user", friendsNumber,"user_received_voting",phoneNumber,false,
 				new StackMobCallback() {
+=======
+			stackmob.getDatastore().deleteIdFrom("user", friendsNumber,"user_received_voting",phoneNumber,false,
+					new StackMobCallback() {
+>>>>>>> origin/init
 					@Override
 					public void success(String responseBody) {
 						System.out.println("here in successssssss of Friends List"+ responseBody);
@@ -1398,6 +1521,7 @@ private void fetchuserobjects() {
 
 	class ItemAdapter extends ArrayAdapter<MediaInfo> {
 
+<<<<<<< HEAD
 		
 		
 		
@@ -1412,6 +1536,15 @@ private void fetchuserobjects() {
 			//((BaseAdapter)((ListView) list).getAdapter()).notifyDataSetChanged(); 
 			this.context = context;
 			
+=======
+		Context context;
+
+		public ItemAdapter(Context context, int resourceId, List<MediaInfo> rowItems) {
+
+			super(context, resourceId,rowItems);
+
+			this.context = context;
+>>>>>>> origin/init
 
 		}
 
@@ -1488,7 +1621,11 @@ private void fetchuserobjects() {
 			return convertView;
 
 		}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/init
 	}
 
 	 
@@ -1609,7 +1746,11 @@ private void fetchuserobjects() {
  		public void querytofectchtaggedusers()
 		{
  		 
+<<<<<<< HEAD
 		StackMobQuery query = new StackMobQuery("user_tags").fieldIsEqualTo("media_id",mediaInfoObj.getMediaId());
+=======
+		StackMobQuery query = new StackMobQuery("user_tags").fieldIsEqualTo("media_id",mediaInfoObj.getMediaId()).fieldIsEqualTo("username",mediaInfoObj.getMediaownernumber());;
+>>>>>>> origin/init
 		 
 		stackmob.getDatastore().get(query,StackMobOptions.depthOf(2), new StackMobCallback() {
 			@Override
@@ -1628,9 +1769,19 @@ private void fetchuserobjects() {
 						    JSONObject mediaUser =  jsonObject.optJSONObject("usertags_user");
 			    			if(null!= mediaUser){  
 				    			    mediaOwnerProfilePic = mediaUser.optString("profile_picture"); 
+<<<<<<< HEAD
 				    		}
 			    			 
 			    			taggedUserList.add("user_"+parsedresult);  
+=======
+				    			    if(mediaOwnerProfilePic.equals(null)){
+				    			    	mediaUser.optString("profilepic");
+									}
+				    		}
+			    			 if(!taggedUserList.contains("user_"+parsedresult)){
+			    			taggedUserList.add("user_"+parsedresult);  
+			    			 }
+>>>>>>> origin/init
 			    			if(!MHConstants.friendsModelDetails.containsKey(parsedresult)){
 			    				 MHConstants.friendsModelDetails.put(parsedresult,new FriendsModel(parsedresult,mediaOwnerProfilePic,"false"));
   			    			}
@@ -1669,7 +1820,11 @@ private void fetchuserobjects() {
 		public void querytofectchtaggedtopics()
 		{
 		fields = new ArrayList<String>();
+<<<<<<< HEAD
 		StackMobQuery query = new StackMobQuery("topic_tags").fieldIsEqualTo("media_id",mediaInfoObj.getMediaId());
+=======
+		StackMobQuery query = new StackMobQuery("topic_tags").fieldIsEqualTo("media_id",mediaInfoObj.getMediaId()).fieldIsEqualTo("username",mediaInfoObj.getMediaownernumber());
+>>>>>>> origin/init
 		fields.add("tagged_topic");
 		stackmob.getDatastore().get(query,StackMobOptions.selectedFields(fields), new StackMobCallback() {
 			@Override
@@ -1684,7 +1839,13 @@ private void fetchuserobjects() {
 						JSONObject jsonObject = jsonArray.getJSONObject(i);
 						parsedresult = jsonObject.getString("tagged_topic");
 						Log.v("ListeningFRd::", "parsed result::topic_tags"+ parsedresult);
+<<<<<<< HEAD
 						taggedUserList.add("topic_"+parsedresult);
+=======
+						if(!taggedUserList.contains("topic_"+parsedresult)){
+						taggedUserList.add("topic_"+parsedresult);
+						}
+>>>>>>> origin/init
 						cnt++;
 						if(cnt>2 && pharse.equals("true")){
 							calls();
@@ -1724,7 +1885,11 @@ private void fetchuserobjects() {
 			public void querytofectchtaggedprmcontacts()
 			{
 				 fields = new ArrayList<String>();
+<<<<<<< HEAD
 			StackMobQuery query = new StackMobQuery("promoted_contacts_tags").fieldIsEqualTo("media_id",mediaInfoObj.getMediaId());
+=======
+			StackMobQuery query = new StackMobQuery("promoted_contacts_tags").fieldIsEqualTo("media_id",mediaInfoObj.getMediaId()).fieldIsEqualTo("username",mediaInfoObj.getMediaownernumber());
+>>>>>>> origin/init
 			fields.add("tagged_prm_contact");
 			stackmob.getDatastore().get(query,StackMobOptions.selectedFields(fields), new StackMobCallback() {
 				@Override
@@ -1739,7 +1904,13 @@ private void fetchuserobjects() {
 							JSONObject jsonObject = jsonArray.getJSONObject(i);
 							parsedresult = jsonObject.getString("tagged_prm_contact");
 							Log.v("ListeningFRd::", "parsed result::promoted_contacts_tags"+ parsedresult);
+<<<<<<< HEAD
 							taggedUserList.add("prmcontact_"+parsedresult); 
+=======
+							if(!taggedUserList.contains("prmcontact_"+parsedresult)){
+							taggedUserList.add("prmcontact_"+parsedresult); 
+							}
+>>>>>>> origin/init
 							cnt++;
 							 if(cnt>2 && pharse.equals("true")  ){
 								calls();
@@ -1821,5 +1992,8 @@ private void fetchuserobjects() {
 				finish();
 			}
 		    }
+<<<<<<< HEAD
 	 
+=======
+>>>>>>> origin/init
 }
